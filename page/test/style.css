@@ -1,0 +1,16 @@
+div.d1{
+    background-color: green;
+    display:flex;
+    justify-content: center;
+    position: relative;
+}
+div.d2{
+    
+    
+    background-color: aliceblue;
+    position: absolute;
+    bottom: 0;
+    top:0;
+    left: 0;
+    right: 0;
+}

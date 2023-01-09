@@ -1,0 +1,26 @@
+$main-color: rgba(219, 148, 35, 1);
+@mixin h2 {
+    color:$main-color;
+    font-size: 2.5rem;
+    font-family: "Lobster";
+}
+section.about{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding-top: 30px;
+    padding-inline:54px;
+    >h2{
+        @include h2;
+    }
+    >p{
+        font-size: 1.3rem;
+        font-family: "Lato";
+        text-align: center;
+    }
+    >.lighter{
+        color: rgba(122, 122, 122, 1);
+    }
+}
