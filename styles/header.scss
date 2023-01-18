@@ -44,7 +44,7 @@ header {
         left: 0px;
         width: 100%;
         overflow: hidden;
-        
+        transition: height 0.3s ease;
         >ul{
 
             display: flex;
@@ -62,7 +62,7 @@ header {
         &.visible {
             height:330px
         }
-        transition: height 0.3s ease;
+        
 
        
     }

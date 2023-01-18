@@ -1,28 +1,32 @@
 $main-color: rgba(219, 148, 35, 1);
+
 @mixin h2 {
-    color:$main-color;
+    color: $main-color;
     font-size: 2.5rem;
     font-family: "Lobster";
 }
-section.menu{
+
+section.menu {
     display: flex;
     align-items: center;
     flex-direction: column;
     padding-top: 30px;
     height: fit-content;
-    >h2{
+
+    >h2 {
         @include h2;
         margin-bottom: 20px;
     }
-    >div{
+
+    >div {
         width: 100vw;
         height: fit-content;
         display: flex;
         overflow: hidden;
         position: relative;
         justify-content: center;
-        
-        >img{
+
+        >img {
             background-image: url(../images/logo-black.svg);
 
             top: 0;
@@ -32,27 +36,74 @@ section.menu{
             background-size: 45vw;
             z-index: -1;
             filter: opacity(0.05);
-            background-repeat: space round  ;
-            
+            background-repeat: space round;
+
         }
-        >ul{
+
+        >ul {
             display: flex;
             flex-direction: column;
-            gap: 15px;
-            >ul.drink-type{
+            gap: 10px;
+
+            >ul.drink-type {
                 display: flex;
-                gap: 80px;
                 align-items: center;
-                >p{
-                    font-size:2rem ;
+                flex-direction: column;
+                gap: 20px;
+
+                >li.drink-title {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+
+                    >p {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 2rem;
+
+                        >i {
+                            margin-left: 80px;
+                            font-size: 1.3rem;
+                        }
+                    }
+                    
+
                 }
-                >i{
-                    font-size: 1.5rem;
+
+                >li.drink-offers {
+                    transition: height 1s ease;
+
+
+                    >ul {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 5px;
+                        >li {
+                            display: flex;
+                            flex-direction: row;
+                            font-size: 1rem;
+                            gap: 30px;
+                        }
+                    }
+                    
+                    &.not-expanded {
+                        display: none;
+                    }
+
+                    
                 }
-                >li{
-                    display: none;
-                    font-size: 1rem;
-                }
+
+                // >p{
+                //     font-size:2rem ;
+                // }
+                // >i{
+                //     font-size: 1.5rem;
+                // }
+                // >li{
+                //     display: none;
+                //     font-size: 1rem;
+                // }
             }
         }
     }

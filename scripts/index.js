@@ -37,4 +37,23 @@ window.addEventListener("scroll", () => {
    }
 
 });
+//-------------------------------------------------------------
 
+drink = document.getElementById("drink");
+drinkOffers = document.getElementById("drink-offers")
+drink.addEventListener("click", drinksExpand);;
+function drinksExpand(){
+   drinkOffers.classList.toggle("not-expanded")
+}
+drink2 = document.getElementById("drink2");
+drinkOffers2 = document.getElementById("drink-offers2")
+drink2.addEventListener("click", drinksExpand2);;
+function drinksExpand2(){
+   drinkOffers2.classList.toggle("not-expanded")
+}
+drink3 = document.getElementById("drink3");
+drinkOffers3 = document.getElementById("drink-offers3")
+drink3.addEventListener("click", drinksExpand3);;
+function drinksExpand3(){
+   drinkOffers3.classList.toggle("not-expanded")
+}
