@@ -175,7 +175,6 @@ section.menu > div > ul > ul.drink-type {
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 20px;
 }
 section.menu > div > ul > ul.drink-type > li.drink-title {
   display: flex;
@@ -193,7 +192,10 @@ section.menu > div > ul > ul.drink-type > li.drink-title > p > i {
   font-size: 1.3rem;
 }
 section.menu > div > ul > ul.drink-type > li.drink-offers {
-  transition: height 1s ease;
+  max-height: 999px;
+  transition: all ease;
+  transition-delay: 0s;
+  transition-duration: 1s;
 }
 section.menu > div > ul > ul.drink-type > li.drink-offers > ul {
   display: flex;
@@ -207,7 +209,8 @@ section.menu > div > ul > ul.drink-type > li.drink-offers > ul > li {
   gap: 30px;
 }
 section.menu > div > ul > ul.drink-type > li.drink-offers.not-expanded {
-  display: none;
+  max-height: 0px;
+  overflow: hidden;
 }
 
 body {

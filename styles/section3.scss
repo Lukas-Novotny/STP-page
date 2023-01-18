@@ -49,8 +49,6 @@ section.menu {
                 display: flex;
                 align-items: center;
                 flex-direction: column;
-                gap: 20px;
-
                 >li.drink-title {
                     display: flex;
                     flex-direction: column;
@@ -72,9 +70,10 @@ section.menu {
                 }
 
                 >li.drink-offers {
-                    transition: height 1s ease;
-
-
+                    max-height: 999px;
+                    transition: all ease;
+                    transition-delay: 0s;
+                    transition-duration: 1s;
                     >ul {
                         display: flex;
                         flex-direction: column;
@@ -88,10 +87,12 @@ section.menu {
                     }
                     
                     &.not-expanded {
-                        display: none;
-                    }
+                        max-height: 0px;
+                        overflow: hidden;
 
+                    }
                     
+
                 }
 
                 // >p{
