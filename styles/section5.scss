@@ -1,0 +1,42 @@
+$main-color: rgba(219, 148, 35, 1);
+
+@mixin h2 {
+    color: $main-color;
+    font-size: 2.5rem;
+    font-family: "Lobster";
+}
+
+section.open-hours {
+    font-family: "Lato";
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 45px 0px;
+    align-items: center;
+    position: relative;
+    margin-bottom: 20px ;
+    h2 {
+        @include h2;
+    }
+
+    img {
+        background-image: url(../images/logo-black.svg);
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        position: absolute;
+        background-size: 45vw;
+        z-index: -1;
+        filter: opacity(0.05);
+        background-repeat: space round;
+    }
+    div{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        p{
+            font-size: 2rem;
+            font-weight: 600;
+        }
+    }
+}

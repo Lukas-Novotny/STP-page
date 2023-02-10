@@ -2,6 +2,22 @@ let headerButton = document.getElementById("header-button")
 let headerNav = document.getElementById("header-nav")
 let header = document.getElementById("header")
 headerButton.addEventListener("click", dropdown)
+
+
+
+
+function vh(percent) {
+   var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+   return (percent * h) / 100;
+ }
+ 
+ function vw(percent) {
+   var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+   return (percent * w) / 100;
+ }
+//https://stackoverflow.com/questions/44109314/javascript-calculate-with-viewport-width-height
+
+
 function dropdown() {
    headerNav.classList.toggle("visible")
    // headerNav.style.height = "fit-content"
@@ -10,7 +26,7 @@ function dropdown() {
       burgerImage.style.color = "white";
    }
    else {
-      if (window.scrollY > 840) {
+      if (window.scrollY > vh(80)) {
          whiteLogo.src = "./images/logo-black.svg";
          burgerImage.style.color = "black";
       }
@@ -23,9 +39,11 @@ function dropdown() {
 };
 whiteLogo = document.getElementById("white");
 burgerImage = document.getElementById("burger")
-window.addEventListener("scroll", () => {
-   if (!headerNav.classList.contains("visible")) {
-      if (window.scrollY < 840) {
+window.addEventListener("load", colors);
+window.addEventListener("scroll", colors);
+function colors(){
+      if (!headerNav.classList.contains("visible")) {
+      if (window.scrollY < vh(80)) {
          whiteLogo.src = "./images/logo-white.svg";
          burgerImage.style.color = "white";
       }
@@ -35,8 +53,10 @@ window.addEventListener("scroll", () => {
 
       }
    }
+}
 
-});
+
+
 //-------------------------------------------------------------
 
 // drink = document.getElementById("drink");
@@ -68,8 +88,28 @@ for (let i = 0; i < drinkTypes.length; i++) {
 function drinksExpand(){
    if (this.children[1].classList.contains("not-expanded")) {
       this.children[1].classList.toggle("not-expanded")
+      this.children[0].children[0].children[0].classList.toggle("rotated")
    }
    else{
       this.children[1].classList.toggle("not-expanded")
+      this.children[0].children[0].children[0].classList.toggle("rotated")
+
    }
+}
+// function drinksExpand(){
+//    if (this.children[1].style.maxHeight === "999px") {
+//       this.children[1].style.maxHeight = "0px"
+//    }
+//    else{
+//       this.children[1].style.maxHeight = "999px"
+//    }
+// }
+// let buttonScrollToMenu = document.getElementById("buttonScrollToMenu");
+// console.log(drinkTypes)
+// console.log(buttonScrollToMenu)
+// buttonScrollToMenu.addEventListener("click", scrollToId);
+function scrollToId(){
+   console.log("idk")
+   document.getElementById("menu").scrollIntoView();
+
 }

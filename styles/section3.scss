@@ -7,11 +7,14 @@ $main-color: rgba(219, 148, 35, 1);
 }
 
 section.menu {
+
     display: flex;
     align-items: center;
     flex-direction: column;
     padding-top: 30px;
     height: fit-content;
+    font-family: "Lato";
+
 
     >h2 {
         @include h2;
@@ -19,7 +22,7 @@ section.menu {
     }
 
     >div {
-        width: 100vw;
+        width: 100%;
         height: fit-content;
         display: flex;
         overflow: hidden;
@@ -43,7 +46,7 @@ section.menu {
         >ul {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 15px;
 
             >ul.drink-type {
                 display: flex;
@@ -63,6 +66,13 @@ section.menu {
                         >i {
                             margin-left: 80px;
                             font-size: 1.3rem;
+                            transition: transform 1s ;
+
+                            &.rotated{
+                                transform: rotate(90deg);
+                                transition: transform 1s ;
+
+                            }
                         }
                     }
                     
@@ -70,10 +80,17 @@ section.menu {
                 }
 
                 >li.drink-offers {
+                    transition: max-height 1s;
+
                     max-height: 999px;
-                    transition: all ease;
-                    transition-delay: 0s;
-                    transition-duration: 1s;
+                    
+                    overflow: hidden;
+
+                    &.not-expanded {
+                        max-height: 0px;
+                        overflow: hidden;
+                    }
+
                     >ul {
                         display: flex;
                         flex-direction: column;
@@ -85,12 +102,9 @@ section.menu {
                             gap: 30px;
                         }
                     }
-                    
-                    &.not-expanded {
-                        max-height: 0px;
-                        overflow: hidden;
+                  
 
-                    }
+
                     
 
                 }

@@ -1,25 +1,36 @@
-
 header {
-    position: fixed;
+    z-index: 999;
+    position: absolute;
     -webkit-backface-visibility: hidden;
     top: 0px;
     left: 0px;
     display: flex;
-    width: calc(100vw - 20px);
+    width: calc(100% - 20px);
+    // width: 100%;
+    max-width: 100vw;
     justify-content: space-between;
-    padding: 10px;
+    padding: 10px 10px;
+
+    @media screen and (min-width: 768px) {
+        height: fit-content;
+    }
 
 
     >a {
         z-index: 2;
         width: fit-content;
-        &::hover{
+
+        &::hover {
             cursor: pointer;
         }
 
         >img {
             height: 70px;
-            
+
+        }
+
+        @media screen and (min-width: 768px) {
+            display: none;
         }
     }
 
@@ -27,11 +38,15 @@ header {
         z-index: 2;
         background: none;
         border: none;
+
         >i {
             font-size: 2.5rem;
             color: white;
         }
 
+        @media screen and (min-width: 768px) {
+            display: none;
+        }
     }
 
 
@@ -45,25 +60,83 @@ header {
         width: 100%;
         overflow: hidden;
         transition: height 0.3s ease;
-        >ul{
+
+        @media screen and (min-width: 768px) {
+            height: fit-content;
+            display: flex;
+            background-color: transparent;
+        }
+
+        >ul {
 
             display: flex;
             flex-direction: column;
-            gap: 25px;
             font-size: 1.3rem;
             padding: 15px 0px 30px 30px;
             font-family: "Lato";
             padding-top: 100px;
-            >a{
-                text-decoration: none;
-                color: white;
+            gap: 25px;
+
+
+            @media screen and (min-width: 768px) {
+                flex-direction: row;
+                padding: 0px;
+                padding: 10px;
+                gap: 40px;
+                width: 100%;
+                justify-content: center;
+            }
+
+            >li {
+
+                @media screen and (min-width: 768px) {
+                    display: flex;
+                    align-items: center;
+                }
+
+                &.logo-desktop {
+                    display: none;
+
+                    @media screen and (min-width: 768px) {
+                        display: flex;
+
+                        >a>img {
+                            height: 70px;
+                        }
+                    }
+                }
+            }
+
+            >ul {
+                display: flex;
+                gap: 25px;
+                flex-direction: column;
+
+                @media screen and (min-width: 768px) {
+                    flex-direction: row;
+                    align-items: center;
+                }
+
+                >li {
+
+                    >a {
+                        text-decoration: none;
+                        color: white;
+
+                        @media screen and (min-width: 768px) {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+
             }
         }
-        &.visible {
-            height:330px
-        }
-        
 
-       
+        &.visible {
+            height: 330px
+        }
+
+
+
     }
 }

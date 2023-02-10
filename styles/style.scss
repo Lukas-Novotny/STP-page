@@ -3,6 +3,10 @@
 @use "section1.scss";
 @use "section2.scss";
 @use "section3.scss";
-body{
-    overflow-x: hidden;
+@use "section4.scss";
+@use "section5.scss";
+@use "footer.scss";
+
+html,*{
+    scroll-behavior: smooth !important
 }
