@@ -1,26 +1,86 @@
 $main-color: rgba(219, 148, 35, 1);
+
 @mixin h2 {
-    color:$main-color;
-    font-size: 2.5rem;
+    color: $main-color;
+    font-size: 2.2rem;
     font-family: "Lobster";
+
+    @media screen and (min-width: 400px) {
+        font-size: 2.5rem;
+    }
+    @media screen and (min-width: 768px) {
+        font-size: 3.5rem;
+    }
 }
-section.about{
+
+section.about {
     background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 30px;
     padding-top: 30px;
-    padding-inline:54px;
-    >h2{
+    padding-inline: 54px;
+
+    >h2 {
         @include h2;
     }
-    >p{
+
+    >p {
         font-size: 1.3rem;
         font-family: "Lato";
         text-align: center;
     }
-    >.lighter{
+
+    >.lighter {
         color: rgba(122, 122, 122, 1);
+    }
+
+    img.img-desktop {
+        display: none;
+    }
+
+    @media screen and (min-width: 768px) {
+        img.img-mobile {
+            display: none;
+        }
+
+
+
+
+        & {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            grid-column-gap: 80px;
+            grid-row-gap: 20px;
+            padding-bottom: 50px;
+        }
+        >h2{
+            grid-area: 1 / 1 / 2 / 5; 
+            justify-self: center;
+        }
+
+        >img.img-desktop {
+            display: block;
+            grid-area: 2 / 1 / 4 / 3;
+            width: 400px;
+            justify-self: end;
+            @media screen and (min-width: 1200px) {
+                width: 600px;
+            }
+        }
+        >p{
+            grid-area: 2 / 3 / 3 / 5;
+            text-align: inherit;
+            align-self: end;
+            max-width: 500px;
+            font-size: 1.8rem;
+
+        }
+        >.lighter {
+            grid-area: 3 / 3 / 4 / 5;
+            align-self: flex-start;
+        }
     }
 }

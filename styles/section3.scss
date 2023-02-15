@@ -4,6 +4,9 @@ $main-color: rgba(219, 148, 35, 1);
     color: $main-color;
     font-size: 2.5rem;
     font-family: "Lobster";
+    @media screen and (min-width: 768px) {
+        font-size: 3.5rem;
+    }
 }
 
 section.menu {
@@ -22,12 +25,16 @@ section.menu {
     }
 
     >div {
+
         width: 100%;
         height: fit-content;
         display: flex;
-        overflow: hidden;
+
         position: relative;
         justify-content: center;
+        display: grid;
+
+
 
         >img {
             background-image: url(../images/logo-black.svg);
@@ -41,12 +48,53 @@ section.menu {
             filter: opacity(0.05);
             background-repeat: space round;
 
+            @media screen and (min-width: 768px) {
+                background-size: 12vw;
+                top: -80px;
+                bottom: -80px;
+                filter: opacity(0.02);
+
+            }
+
         }
 
         >ul {
             display: flex;
             flex-direction: column;
             gap: 15px;
+
+            @media screen and (min-width: 768px) {
+                flex-wrap: wrap;
+                width: 1000px;
+                flex-direction: row;
+                justify-content: center;
+                max-height: 500px;
+                overflow-y: auto;
+                gap: 50px;
+
+
+                /* ===== Scrollbar CSS ===== */
+                /* Firefox */
+                & {
+                    scrollbar-width: auto;
+                    scrollbar-color: #000000 #ffffff;
+                }
+
+                /* Chrome, Edge, and Safari */
+                &::-webkit-scrollbar {
+                    width: 16px;
+                }
+
+                &::-webkit-scrollbar-track {
+                    background: #ffffff;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background-color: #000000;
+                    border-radius: 10px;
+                    border: 3px solid #ffffff;
+                }
+            }
 
             >ul.drink-type {
                 display: flex;
@@ -57,6 +105,10 @@ section.menu {
                     flex-direction: column;
                     justify-content: center;
 
+                    @media screen and (min-width: 768px) {
+                        margin-bottom: 10px;
+                    }
+
                     >p {
                         display: flex;
                         justify-content: center;
@@ -64,37 +116,49 @@ section.menu {
                         font-size: 2rem;
 
                         >i {
+
                             margin-left: 80px;
                             font-size: 1.3rem;
-                            transition: transform 1s ;
+                            transition: all 1s ease;
 
-                            &.rotated{
+                            @media screen and (min-width: 768px) {
+                                display: none;
+                            }
+
+                            &.rotated {
                                 transform: rotate(90deg);
-                                transition: transform 1s ;
+                                transition: all 1s ease;
 
                             }
                         }
                     }
-                    
+
 
                 }
 
                 >li.drink-offers {
-                    transition: max-height 1s;
 
                     max-height: 999px;
-                    
+
                     overflow: hidden;
+                    transition: all 1s ease;
 
                     &.not-expanded {
                         max-height: 0px;
                         overflow: hidden;
+                        transition: all 1s ease;
+
+
+                        @media screen and (min-width: 768px) {
+                            max-height: 999px;
+                        }
                     }
 
                     >ul {
                         display: flex;
                         flex-direction: column;
                         gap: 5px;
+
                         >li {
                             display: flex;
                             flex-direction: row;
@@ -102,10 +166,10 @@ section.menu {
                             gap: 30px;
                         }
                     }
-                  
 
 
-                    
+
+
 
                 }
 
