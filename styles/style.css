@@ -397,14 +397,14 @@ section.menu > div {
   display: grid;
 }
 section.menu > div > img {
-  background-image: url(../images/logo-black.svg);
+  background-image: url(../images/logo-black.png);
   top: 0;
   bottom: 0;
   width: 100%;
   position: absolute;
   background-size: 45vw;
   z-index: -1;
-  filter: opacity(0.05);
+  filter: opacity(0.02);
   background-repeat: space round;
 }
 @media screen and (min-width: 768px) {
@@ -454,11 +454,17 @@ section.menu > div > ul > ul.drink-type {
   display: flex;
   align-items: center;
   flex-direction: column;
+  width: 100%;
 }
 section.menu > div > ul > ul.drink-type > li.drink-title {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
+}
+section.menu > div > ul > ul.drink-type > li.drink-title span.small {
+  font-size: 1rem;
+  margin-left: 10px;
 }
 @media screen and (min-width: 768px) {
   section.menu > div > ul > ul.drink-type > li.drink-title {
@@ -467,12 +473,18 @@ section.menu > div > ul > ul.drink-type > li.drink-title {
 }
 section.menu > div > ul > ul.drink-type > li.drink-title > p {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   font-size: 2rem;
+  width: 100%;
+  gap: 1rem;
+}
+@media screen and (min-width: 768px) {
+  section.menu > div > ul > ul.drink-type > li.drink-title > p {
+    justify-content: center;
+  }
 }
 section.menu > div > ul > ul.drink-type > li.drink-title > p > i {
-  margin-left: 80px;
   font-size: 1.3rem;
   transition: all 1s ease;
 }
@@ -631,7 +643,7 @@ section.open-hours h2 {
   }
 }
 section.open-hours img {
-  background-image: url(../images/logo-black.svg);
+  background-image: url(../images/logo-black.png);
   top: 0;
   bottom: 0;
   width: 100%;
@@ -644,7 +656,7 @@ section.open-hours img {
 @media screen and (min-width: 768px) {
   section.open-hours img {
     background-size: 12vw;
-    filter: opacity(0.03);
+    filter: opacity(0.02);
   }
 }
 section.open-hours div {

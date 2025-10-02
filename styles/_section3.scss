@@ -36,7 +36,7 @@ section.menu {
 
 
         >img {
-            background-image: url(../images/logo-black.svg);
+            background-image: url(../images/logo-black.png);
 
             top: 0;
             bottom: 0;
@@ -44,8 +44,8 @@ section.menu {
             position: absolute;
             background-size: 45vw;
             z-index: -1;
-            filter: opacity(0.05);
-            background-repeat: space round;
+            filter: opacity(0.02);
+
 
             @media screen and (min-width: 768px) {
                 background-size: 12vw;
@@ -54,6 +54,7 @@ section.menu {
                 filter: opacity(0.02);
 
             }
+            background-repeat: space round;
 
         }
 
@@ -102,10 +103,18 @@ section.menu {
                 display: flex;
                 align-items: center;
                 flex-direction: column;
+                width: 100%;
                 >li.drink-title {
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
+                    width: 100%;
+                    
+
+                    span.small{
+                        font-size: 1rem;
+                        margin-left: 10px;
+                    }
 
                     @media screen and (min-width: 768px) {
                         margin-bottom: 10px;
@@ -113,13 +122,17 @@ section.menu {
 
                     >p {
                         display: flex;
-                        justify-content: center;
+                        justify-content: space-between;
                         align-items: center;
                         font-size: 2rem;
+                        width: 100%;
+                        gap: 1rem;
+                    @media screen and (min-width: 768px) {
+                        justify-content: center;
+                    }
 
                         >i {
 
-                            margin-left: 80px;
                             font-size: 1.3rem;
                             transition: all 1s ease;
 
@@ -145,6 +158,7 @@ section.menu {
                     overflow: hidden;
                     transition: all 1s ease;
 
+
                     &.not-expanded {
                         max-height: 0px;
                         overflow: hidden;
@@ -167,6 +181,7 @@ section.menu {
                             font-size: 1rem;
                             gap: 30px;
                             justify-content: space-between;
+                            
                         }
                     }
 

@@ -28,7 +28,7 @@ function dropdown() {
 
    // headerNav.style.height = "fit-content"
    if (headerNav.classList.contains("visible")) {
-      whiteLogo.src = "./images/logo-white.svg";
+      whiteLogo.src = "./images/logo.png";
       burgerImage.style.color = "white";
    }
    else {
@@ -38,7 +38,7 @@ function dropdown() {
          
       }
       else {
-         whiteLogo.src = "./images/logo-white.svg";
+         whiteLogo.src = "./images/logo.png";
          burgerImage.style.color = "white";
       }
    }
@@ -54,7 +54,7 @@ function colors() {
    }
    if (!headerNav.classList.contains("visible")) {
       if (window.scrollY < vh(80)) {
-         whiteLogo.src = "./images/logo-white.svg";
+         whiteLogo.src = "./images/logo.png";
          burgerImage.style.color = "white";
       }
       else {
@@ -85,7 +85,7 @@ function desktopColors() {
                navDesktopItems[i].style.color = "white";
                navDesktopItems[i].classList.remove("black-line")
             }
-            logoDesktop.src = "./images/logo-white.svg"
+            logoDesktop.src = "./images/logo.png"
          }
          else {
             for (let i = 0; i < navDesktopItems.length; i++) {
