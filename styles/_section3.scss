@@ -16,7 +16,6 @@ section.menu {
     flex-direction: column;
     padding-top: 30px;
     height: fit-content;
-    font-family: "Lato";
 
 
     >h2 {
@@ -62,11 +61,14 @@ section.menu {
             display: flex;
             flex-direction: column;
             gap: 15px;
+            padding-top: 10px;
+            
 
             @media screen and (min-width: 768px) {
-                flex-wrap: wrap;
+                display: grid;
+                //2 columns on desktop
+                grid-template-columns: 1fr 1fr;
                 width: 1000px;
-                flex-direction: row;
                 justify-content: center;
                 max-height: 500px;
                 overflow-y: auto;
@@ -164,6 +166,7 @@ section.menu {
                             flex-direction: row;
                             font-size: 1rem;
                             gap: 30px;
+                            justify-content: space-between;
                         }
                     }
 
