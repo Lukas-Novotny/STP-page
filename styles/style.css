@@ -538,7 +538,6 @@ section.news h2 {
   }
 }
 section.news ul {
-  font-family: "Lato";
   max-width: 100vw;
   display: flex;
   overflow: auto;
@@ -613,7 +612,6 @@ section.news ul li div .text-gray {
 }
 
 section.open-hours {
-  font-family: "Lato";
   display: flex;
   flex-direction: column;
   gap: 20px;
