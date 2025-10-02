@@ -420,6 +420,7 @@ section.menu > div > ul {
   flex-direction: column;
   gap: 15px;
   padding-top: 10px;
+  padding-inline: 1rem;
 }
 @media screen and (min-width: 768px) {
   section.menu > div > ul {
@@ -501,6 +502,7 @@ section.menu > div > ul > ul.drink-type > li.drink-offers {
   max-height: 999px;
   overflow: hidden;
   transition: all 1s ease;
+  width: 70%;
 }
 section.menu > div > ul > ul.drink-type > li.drink-offers.not-expanded {
   max-height: 0px;
@@ -516,13 +518,18 @@ section.menu > div > ul > ul.drink-type > li.drink-offers > ul {
   display: flex;
   flex-direction: column;
   gap: 5px;
+  width: 100%;
 }
 section.menu > div > ul > ul.drink-type > li.drink-offers > ul > li {
   display: flex;
   flex-direction: row;
   font-size: 1rem;
-  gap: 30px;
   justify-content: space-between;
+  gap: 10px;
+}
+section.menu > div > ul > ul.drink-type > li.drink-offers > ul > li p {
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 section.news {

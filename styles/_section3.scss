@@ -63,6 +63,7 @@ section.menu {
             flex-direction: column;
             gap: 15px;
             padding-top: 10px;
+            padding-inline: 1rem;
             
 
             @media screen and (min-width: 768px) {
@@ -157,6 +158,7 @@ section.menu {
 
                     overflow: hidden;
                     transition: all 1s ease;
+                                            width: 70%;
 
 
                     &.not-expanded {
@@ -174,15 +176,17 @@ section.menu {
                         display: flex;
                         flex-direction: column;
                         gap: 5px;
+                        width: 100%;
 
                         >li {
                             display: flex;
                             flex-direction: row;
                             font-size: 1rem;
-                            gap: 30px;
                             justify-content: space-between;
-                            
-                        }
+                            gap: 10px;
+                            p {
+                                width: fit-content
+                        }}
                     }
 
 
