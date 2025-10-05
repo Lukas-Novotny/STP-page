@@ -4,7 +4,7 @@ $navGap3 : 50px;
 
 header {
     z-index: 999;
-    position: absolute;
+    position: sticky;
     -webkit-backface-visibility: hidden;
     top: 0px;
     left: 0px;

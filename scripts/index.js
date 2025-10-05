@@ -33,8 +33,9 @@ function dropdown() {
    }
    else {
       if (window.scrollY > vh(80)) {
-         whiteLogo.src = "./images/logo-black.svg";
+         whiteLogo.src = "./images/logo-black.png";
          burgerImage.style.color = "black";
+         console.log("switch to black");
          
       }
       else {
@@ -58,7 +59,7 @@ function colors() {
          burgerImage.style.color = "white";
       }
       else {
-         whiteLogo.src = "./images/logo-black.svg";
+         whiteLogo.src = "./images/logo-black.png";
          burgerImage.style.color = "black";
 
       }
@@ -93,7 +94,7 @@ function desktopColors() {
 
                navDesktopItems[i].classList.add("black-line")
             }
-            logoDesktop.src = "./images/logo-black.svg"
+            logoDesktop.src = "./images/logo-black.png"
 
          }
       }
