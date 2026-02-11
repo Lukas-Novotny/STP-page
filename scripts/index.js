@@ -18,6 +18,7 @@ function vw(percent) {
 //https://stackoverflow.com/questions/44109314/javascript-calculate-with-viewport-width-height
 const mediaQuery = window.matchMedia('(min-width: 768px)')
 let navDesktopItems = document.getElementsByClassName("desktop-nav-items")
+let navDesktop = document.getElementById("nav-desktop")
 
 //-------------------------PHONE HEADER-------------------------------
 function dropdown() {
@@ -35,7 +36,6 @@ function dropdown() {
       if (window.scrollY > vh(80)) {
          whiteLogo.src = "./images/logo-black.png";
          burgerImage.style.color = "black";
-         console.log("switch to black");
          
       }
       else {
@@ -54,13 +54,15 @@ function colors() {
       navDesktopItems[i].style.color = "white";
    }
    if (!headerNav.classList.contains("visible")) {
-      if (window.scrollY < vh(80)) {
+      if (window.scrollY < 1) {
          whiteLogo.src = "./images/logo.png";
          burgerImage.style.color = "white";
+         navDesktop.style.backgroundColor = "transparent";
       }
       else {
          whiteLogo.src = "./images/logo-black.png";
-         burgerImage.style.color = "black";
+         navDesktop.style.backgroundColor = "white";
+
 
       }
    }
@@ -81,7 +83,7 @@ function desktopColors() {
    if (mediaQuery.matches) {
 
       if (!headerNav.classList.contains("visible")) {
-         if (window.scrollY < vh(70)) {
+         if (window.scrollY < 1) {
             for (let i = 0; i < navDesktopItems.length; i++) {
                navDesktopItems[i].style.color = "white";
                navDesktopItems[i].classList.remove("black-line")
@@ -95,6 +97,7 @@ function desktopColors() {
                navDesktopItems[i].classList.add("black-line")
             }
             logoDesktop.src = "./images/logo-black.png"
+            
 
          }
       }
