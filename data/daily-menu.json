@@ -21,6 +21,11 @@
       "name": "Veprova krkovicka s koprovym zelim",
       "description": "Mekke maso s domacim zelim",
       "price": "200 Kc"
+    },
+    {
+      "name": "husty pls funguj",
+      "description": "idk popis",
+      "price": "100 Kc"
     }
   ]
 }
