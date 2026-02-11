@@ -1,0 +1,28 @@
+﻿backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+locale: "cs"
+
+collections:
+  - name: "daily_menu"
+    label: "Denni menu"
+    files:
+      - label: "Denni menu"
+        name: "daily_menu"
+        file: "data/daily-menu.json"
+        format: "json"
+        fields:
+          - { label: "Nadpis", name: "title", widget: "string", default: "Menu Dne" }
+          - { label: "Podnadpis", name: "subtitle", widget: "string", required: false }
+          - label: "Polozky"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.name}} - {{fields.price}}"
+            fields:
+              - { label: "Nazev", name: "name", widget: "string" }
+              - { label: "Popis", name: "description", widget: "string", required: false }
+              - { label: "Cena", name: "price", widget: "string" }

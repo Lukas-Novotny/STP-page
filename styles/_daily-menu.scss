@@ -1,0 +1,106 @@
+$main-color: rgba(219, 148, 35, 1);
+
+@mixin h2 {
+    color: $main-color;
+    font-size: 2.2rem;
+    font-family: "Lobster";
+
+    @media screen and (min-width: 400px) {
+        font-size: 2.5rem;
+    }
+    @media screen and (min-width: 768px) {
+        font-size: 3.5rem;
+    }
+}
+
+section.daily-menu {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-inline: 20px;
+
+    >h2 {
+        @include h2;
+        margin-bottom: 10px;
+    }
+
+    >p {
+        font-size: 1rem;
+        color: rgba(122, 122, 122, 1);
+        text-align: center;
+        margin-bottom: 10px;
+
+        @media screen and (min-width: 768px) {
+            font-size: 1.1rem;
+        }
+    }
+
+    >.menu-items {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        max-width: 600px;
+
+        @media screen and (min-width: 768px) {
+            gap: 25px;
+        }
+
+        >.menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border-left: 4px solid $main-color;
+            background-color: rgba(219, 148, 35, 0.05);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background-color: rgba(219, 148, 35, 0.1);
+                transform: translateX(5px);
+            }
+
+            >.item-info {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+
+                >.item-name {
+                    font-weight: 600;
+                    font-size: 1.05rem;
+                    color: #000;
+
+                    @media screen and (min-width: 768px) {
+                        font-size: 1.15rem;
+                    }
+                }
+
+                >.item-description {
+                    font-size: 0.9rem;
+                    color: rgba(122, 122, 122, 1);
+
+                    @media screen and (min-width: 768px) {
+                        font-size: 0.95rem;
+                    }
+                }
+            }
+
+            >.item-price {
+                font-weight: 700;
+                font-size: 1.1rem;
+                color: $main-color;
+                white-space: nowrap;
+                margin-left: 20px;
+
+                @media screen and (min-width: 768px) {
+                    font-size: 1.25rem;
+                }
+            }
+        }
+    }
+}

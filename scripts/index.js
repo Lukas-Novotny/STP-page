@@ -163,3 +163,68 @@ function drinksExpand() {
 // console.log(drinkTypes)
 // console.log(buttonScrollToMenu)
 // buttonScrollToMenu.addEventListener("click", scrollToId);
+
+async function loadDailyMenu() {
+   const section = document.getElementById("daily-menu");
+   const titleEl = section ? section.querySelector("h2") : null;
+   const subtitleEl = section ? section.querySelector("p") : null;
+   const itemsEl = section ? section.querySelector(".menu-items") : null;
+
+   if (!titleEl || !subtitleEl || !itemsEl) {
+      return;
+   }
+
+   try {
+      const response = await fetch("./data/daily-menu.json", { cache: "no-store" });
+      if (!response.ok) {
+         throw new Error("Daily menu fetch failed");
+      }
+
+      const data = await response.json();
+      const items = Array.isArray(data.items) ? data.items : [];
+
+      if (typeof data.title === "string" && data.title.trim()) {
+         titleEl.textContent = data.title;
+      }
+
+      if (typeof data.subtitle === "string") {
+         subtitleEl.textContent = data.subtitle;
+      }
+
+      if (items.length === 0) {
+         return;
+      }
+
+      itemsEl.innerHTML = "";
+      items.forEach((item) => {
+         const menuItem = document.createElement("div");
+         menuItem.className = "menu-item";
+
+         const itemInfo = document.createElement("div");
+         itemInfo.className = "item-info";
+
+         const itemName = document.createElement("div");
+         itemName.className = "item-name";
+         itemName.textContent = item.name || "";
+
+         const itemDescription = document.createElement("div");
+         itemDescription.className = "item-description";
+         itemDescription.textContent = item.description || "";
+
+         const itemPrice = document.createElement("div");
+         itemPrice.className = "item-price";
+         itemPrice.textContent = item.price || "";
+
+         itemInfo.appendChild(itemName);
+         itemInfo.appendChild(itemDescription);
+         menuItem.appendChild(itemInfo);
+         menuItem.appendChild(itemPrice);
+         itemsEl.appendChild(menuItem);
+      });
+   }
+   catch (error) {
+      console.error("Daily menu fallback to static HTML", error);
+   }
+}
+
+window.addEventListener("DOMContentLoaded", loadDailyMenu);

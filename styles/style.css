@@ -697,6 +697,106 @@ section.open-hours div p {
   }
 }
 
+section.daily-menu {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-inline: 20px;
+}
+section.daily-menu > h2 {
+  color: rgb(219, 148, 35);
+  font-size: 2.2rem;
+  font-family: "Lobster";
+  margin-bottom: 10px;
+}
+@media screen and (min-width: 400px) {
+  section.daily-menu > h2 {
+    font-size: 2.5rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  section.daily-menu > h2 {
+    font-size: 3.5rem;
+  }
+}
+section.daily-menu > p {
+  font-size: 1rem;
+  color: rgb(122, 122, 122);
+  text-align: center;
+  margin-bottom: 10px;
+}
+@media screen and (min-width: 768px) {
+  section.daily-menu > p {
+    font-size: 1.1rem;
+  }
+}
+section.daily-menu > .menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 600px;
+}
+@media screen and (min-width: 768px) {
+  section.daily-menu > .menu-items {
+    gap: 25px;
+  }
+}
+section.daily-menu > .menu-items > .menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-left: 4px solid rgb(219, 148, 35);
+  background-color: rgba(219, 148, 35, 0.05);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+section.daily-menu > .menu-items > .menu-item:hover {
+  background-color: rgba(219, 148, 35, 0.1);
+  transform: translateX(5px);
+}
+section.daily-menu > .menu-items > .menu-item > .item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+section.daily-menu > .menu-items > .menu-item > .item-info > .item-name {
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #000;
+}
+@media screen and (min-width: 768px) {
+  section.daily-menu > .menu-items > .menu-item > .item-info > .item-name {
+    font-size: 1.15rem;
+  }
+}
+section.daily-menu > .menu-items > .menu-item > .item-info > .item-description {
+  font-size: 0.9rem;
+  color: rgb(122, 122, 122);
+}
+@media screen and (min-width: 768px) {
+  section.daily-menu > .menu-items > .menu-item > .item-info > .item-description {
+    font-size: 0.95rem;
+  }
+}
+section.daily-menu > .menu-items > .menu-item > .item-price {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: rgb(219, 148, 35);
+  white-space: nowrap;
+  margin-left: 20px;
+}
+@media screen and (min-width: 768px) {
+  section.daily-menu > .menu-items > .menu-item > .item-price {
+    font-size: 1.25rem;
+  }
+}
+
 footer {
   background-color: black;
   color: white;
