@@ -3,26 +3,6 @@
   "subtitle": "Specialni nabidka cerstve pripravenych jidel",
   "items": [
     {
-      "name": "Kuraci rizek se smazenymi brambory",
-      "description": "Tradicni domaci priprava",
-      "price": "180 Kc"
-    },
-    {
-      "name": "Hovezi gulas s chlebem",
-      "description": "Nase specialita s domacim chlebem",
-      "price": "220 Kc"
-    },
-    {
-      "name": "Zapekane brambory s anglickou slaninou",
-      "description": "Pripraveno cerstve na objednavku",
-      "price": "150 Kc"
-    },
-    {
-      "name": "Veprova krkovicka s koprovym zelim",
-      "description": "Mekke maso s domacim zelim",
-      "price": "200 Kc"
-    },
-    {
       "name": "husty pls funguj",
       "description": "idk popis",
       "price": "100 Kc"
